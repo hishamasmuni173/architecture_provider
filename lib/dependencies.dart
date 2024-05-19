@@ -7,7 +7,7 @@ import 'package:get_it/get_it.dart';
 GetIt service = GetIt.instance;
 
 void init() {
-  service.registerLazySingleton<TodoDataService>(() => TodoDataServiceRest());
-// service.registerLazySingleton<TodoDataService>(() => TodoDataServiceMock());
+ service.registerLazySingleton<TodoDataService>(() => TodoDataServiceRest());
+//  service.registerLazySingleton<TodoDataService>(() => TodoDataServiceMock());
   service.registerLazySingleton(() => RestService());
 }

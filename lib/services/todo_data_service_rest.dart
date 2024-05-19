@@ -7,8 +7,6 @@ class TodoDataServiceRest implements TodoDataService {
   final rest = service<RestService>();
 
   Future<List<Todo>> getTodoList() async {
-    print("get data rest");
-    print(rest);
     final listJson = await rest.get('todos');
 
     return (listJson as List)

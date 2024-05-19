@@ -3,16 +3,15 @@ import 'package:http/http.dart' as http;
 
 class RestService {
   // Change the baseUrl based on your laptop's IP address.
-  static const String baseUrl = 'http://192.168.1.19:3000';
-//  static const String baseUrl = 'http://10.0.2.2:3000';
-  //static const String baseUrl = 'https://my-json-server.typicode.com/hishamasmuni173/jsondb';
+  //static const String baseUrl = 'http://192.168.1.19:5000';
+ // static const String baseUrl = 'http://10.0.2.2:5000';
+  static const String baseUrl = 'https://my-json-server.typicode.com/hishamasmuni173/jsondb';
 
   Future get(String endpoint) async {
-    final response = await http.get('$baseUrl/$endpoint' as Uri);
+    var url = Uri.parse('$baseUrl/$endpoint');
+    final response = await http.get(url);
 
     // ignore: avoid_print
-    print("get data rest service");
-    print(response.statusCode);
     if (response.statusCode == 200) {
       return jsonDecode(response.body);
     }
